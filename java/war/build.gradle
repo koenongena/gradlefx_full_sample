@@ -1,0 +1,18 @@
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+configurations {
+    flex {
+        description = 'flex modules used in the web app'
+//        transitive = true
+    }
+}
+
+war {
+    from configurations.flex //add flex modules to root of war
+}
+
+dependencies {
+    flex project(':flex:swf')
+    compile project(':java:dto')
+}

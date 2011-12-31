@@ -1,0 +1,9 @@
+type='swf'
+
+configurations {
+	all*.exclude group: 'com.adobe.flex.framework'
+}
+
+dependencies {
+    merged project(':flex:swc')
+}
